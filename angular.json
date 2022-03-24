@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "IntcomTesteApp": {
+    "intcomtesteapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -24,7 +24,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "./node_modules/font-awesome/css/font-awesome.css"
             ],
             "scripts": []
           },
@@ -62,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "IntcomTesteApp:build"
+            "browserTarget": "intcomtesteapp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "IntcomTesteApp:build:production"
+              "browserTarget": "intcomtesteapp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "IntcomTesteApp:build"
+            "browserTarget": "intcomtesteapp:build"
           }
         },
         "test": {
@@ -110,15 +112,19 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "IntcomTesteApp:serve"
+            "devServerTarget": "intcomtesteapp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "IntcomTesteApp:serve:production"
+              "devServerTarget": "intcomtesteapp:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "IntcomTesteApp"
+    }
+  },
+  "defaultProject": "intcomtesteapp",
+  "cli": {
+    "analytics": "1f6c9552-5568-4cc5-964a-4d8bfe41d16a"
+  }
 }

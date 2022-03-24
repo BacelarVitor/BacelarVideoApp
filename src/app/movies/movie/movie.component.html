@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+      <div class="col-md-5 mb-3 text-center">
+        <app-card>
+          <app-movie-thumbnail
+              [capa]="movie.capa"
+              [titulo]="movie.titulo">
+          </app-movie-thumbnail>
+          <!--Voltar componente-->
+          <div class="text-center p-1">
+              <a [routerLink]="['/movies']"><b>Voltar para seleção de filmes</b></a>
+          </div>
+        </app-card>
+      </div>
+      <!--Detalhes movie componente-->
+      <div class="col-md-7">
+        <h3>{{ movie.titulo }}</h3>
+
+        <hr />
+        <h6 id="genero">Gêneros:</h6>
+        <span class="mt-2">{{ movie.generos }}</span>
+
+        <div id="fichaTecnica" class="d-flex justify-content-between mt-3">
+          <span><strong>Duração:</strong> {{ movie.duracao }}</span>
+          <span><strong>Direção:</strong> {{ movie.direcao }}</span>
+          <span><strong>Lançamento:</strong> {{ movie.anoLancamento }}</span>
+        </div>
+        <h6 class="mt-3">Sinopse:</h6>
+        <p class="text-justify mt-2">{{ movie.sinopse }}</p>
+
+        <small *ngIf="(location !== null && !location.ativa)"><strong>Você já alugou este filme</strong></small>
+
+        <button (click)="rentMovie()"
+                class="btn btn-block"
+                *ngIf="(!location?.ativa)"
+                [ngClass]="(location !== null) ? 'btn-outline-primary':'btn-primary'">
+          Alugar <span *ngIf="(location !== null && !location.ativa)">{{ novamente }}</span>
+        </button>
+
+        <button (click)="returnMovie()" *ngIf="(location?.ativa)" class="btn btn-outline-primary btn-block">
+            Devolver
+          </button>
+      </div>
+  </div>
+</div>

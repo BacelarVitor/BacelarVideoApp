@@ -1,0 +1,17 @@
+<div class="text-center mt-3 mb-3">
+  <form>
+      <div class="row">
+        <div class="col-12">
+          <i aria-hidden="true" class="fa fa-search mr-1"></i>
+          <input
+              class="rounded col-10"
+              type="search"
+              placeholder="Pesquisar..."
+              autofocus
+              (keyup)="debounce.next($event.target.value)"
+              [value]="value"
+              >
+        </div>
+      </div>
+  </form>
+</div>

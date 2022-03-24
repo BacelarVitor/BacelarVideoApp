@@ -1,0 +1,28 @@
+<p class="text-center text-muted" *ngIf="!movies.length">
+  Desculpe, não a filmes a serem exibidos
+</p>
+
+<ol class="list-unstyled">
+  <li *ngFor="let cols of rows" class="row no-gutters p-0">
+      <div *ngFor="let movie of cols" class="col-lg-4" appDarkenOnHover>
+          <app-card>
+              <app-movie-thumbnail
+                  [capa]="movie.capa"
+                  [titulo]="movie.titulo">
+              </app-movie-thumbnail>
+              <div class="text-center p-1">
+                  <!--implementar botão devolver filme ou ver detalhes-->
+                  <button (click)="getDetails(movie.id)" *ngIf="(user$ | async) as user; else login" class="btn btn-primary btn-block">Detalhes</button>
+
+                  <ng-template #login>
+                    <span class="navbar-text">
+                      <button (click)="redirectLogin()" class="btn btn-outline-primary btn-block">
+                        Entre para poder ver detalhes do filme
+                      </button>
+                    </span>
+                </ng-template>
+              </div>
+          </app-card>
+      </div>
+  </li>
+</ol>

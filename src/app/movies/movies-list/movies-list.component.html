@@ -1,0 +1,9 @@
+<div class="container">
+  <app-search
+      (typing)="filter = $event" [value]="filter">
+  </app-search>
+
+  <app-movies
+      [movies]="movies | filterByTitle: filter">
+  </app-movies>
+</div>
