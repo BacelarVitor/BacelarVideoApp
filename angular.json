@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "intcomtesteapp": {
+    "bacelarvideoapp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/IntcomTesteApp",
+            "outputPath": "dist/BacelarVideoApp",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -64,18 +64,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "intcomtesteapp:build"
+            "browserTarget": "bacelarvideoapp:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "intcomtesteapp:build:production"
+              "browserTarget": "bacelarvideoapp:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "intcomtesteapp:build"
+            "browserTarget": "bacelarvideoapp:build"
           }
         },
         "test": {
@@ -112,18 +112,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "intcomtesteapp:serve"
+            "devServerTarget": "bacelarvideoapp:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "intcomtesteapp:serve:production"
+              "devServerTarget": "bacelarvideoapp:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "intcomtesteapp",
+  "defaultProject": "bacelarvideoapp",
   "cli": {
     "analytics": "1f6c9552-5568-4cc5-964a-4d8bfe41d16a"
   }
